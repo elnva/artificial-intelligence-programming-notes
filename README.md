@@ -7,10 +7,10 @@ See [`docs/README.md`](docs/README.md) for the workflow and [`docs/plan.md`](doc
 ## Quick start
 
 ```bash
-python3.10 -m venv .venv
+python -m venv .venv             # uses pyenv-resolved Python 3.10
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -e ".[dev]"
 ```
 
-Start a new stage with the `/new-stage` slash command in Claude Code.
+Start a new chapter with the `/new-chapter` slash command in Claude Code.
