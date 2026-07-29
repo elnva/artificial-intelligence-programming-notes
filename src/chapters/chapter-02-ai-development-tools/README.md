@@ -96,60 +96,56 @@ Do not skim ahead. The point is to absorb each idea before moving on.
 ### Step 5 — Hello World (Example 2.1)
 
 - **Teach**: Every language tour starts here. The point is not the greeting; the point is that Python prints to standard output with a single function call and no boilerplate — no `main`, no semicolons, no compile step. This is also your first chance to confirm the editor → save → run loop works.
-- **Do**: In `examples/` (next to this README), create a new file called `01-hello.py`. Type a one-line `print` statement that outputs `Hello World!`. Run it with:
+- **Do**: In `examples/` (next to this README), open the file `01-hello.py`. Type a one-line `print` statement that outputs `Hello World!`. Run it with:
   ```bash
   python src/chapters/chapter-02-ai-development-tools/examples/01-hello.py
   ```
 - **Expected**: Terminal prints `Hello World!`.
 - **Tell me when done**: reply with `step 5 done`.
 
-### Step 6 — Comments, variables, and string concatenation (Examples 2.2 and 2.3)
+### Step 6 — Comments and variables (Examples 2.2, 2.3)
 
-- **Teach**: Section 2.4 covers Python's two comment forms (`#` for a single line, triple quotes `'''...'''` for a block) and shows that variables don't need type declarations. Numbers add arithmetically, strings concatenate with `+`. This is also where the book's pythonic mindset starts: dynamic typing, line-by-line execution, no semicolons.
-- **Do**: Create `02-variables.py`. In it, write:
-  - one short single-line comment,
-  - one block comment using triple quotes,
-  - three integer variables, sum two of them, print the result with a label,
-  - two single-character string variables, concatenate them, print,
-  - two longer string variables, join them with a space, print.
-  Run the file.
-- **Expected**: Three printed lines, one numeric, two textual.
+- **Teach**: The book splits this into two tiny files. First (`02-hello2.py`) it shows Python's two comment forms: `#` for a single line, triple quotes `'''...'''` for a block. Then (`03-hello3.py`) it shows that variables don't need type declarations, that `+` adds numbers and concatenates strings, and that you don't need a semicolon at the end of a line. This is where Python's pythonic mindset starts: dynamic typing, line-by-line execution, almost no boilerplate.
+- **Do**:
+  1. Open `02-hello2.py`. Write a single-line `#` comment, then a triple-quoted block comment, then a single `print` of `Hello World`.
+  2. Open `03-hello3.py`. Define three integer variables, sum two of them, print the result with a label. Then two single-character string variables, concatenate with `+`, print. Then two longer string variables, join them with a space, print.
+- **Expected**: Two files run cleanly. `02-hello2.py` prints one line; `03-hello3.py` prints three.
 - **Tell me when done**: reply with `step 6 done`.
 
 ### Step 7 — Loops: `for`, nested `for`, `while` (Examples 2.4, 2.5, 2.6)
 
-- **Teach**: Python uses indentation, not braces, to express block structure. Four spaces is the convention. The book shows three loop forms: a flat `for` over `range(5)`, a nested `for` to multiply indices, and a `while` that increments until a condition fails.
-- **Do**: Create three files: `03-for.py`, `04-nested-for.py`, `05-while.py`. In each, mimic the pattern the book shows — `range(5)` for the simple `for`, `range(5)` × `range(5)` printing `i*j` for the nested one, and a counter starting at 0 incrementing while it is less than 5 for the `while` loop. Each file should also print a "finished" line at the end so you can tell when the loop exited.
-- **Expected**: Three files run cleanly. Watch the indentation — if Python complains about indentation, that is the lesson.
+- **Teach**: Python uses indentation, not braces, to express block structure. Four spaces is the convention. The book shows three loop forms in three files: a flat `for` over `range(5)` (`04-loop.py`), a nested `for` over `range(5)` × `range(5)` printing `i*j` (`05-loop2.py`), and a `while` that increments a counter until it fails the condition (`06-loop3.py`).
+- **Do**: Open the three files in order and write each loop. End each script with a `print("Finished")` so you can see the loop exit.
+- **Expected**: All three files run cleanly. If Python complains about indentation, that is the lesson — fix it and rerun.
 - **Tell me when done**: reply with `step 7 done`.
 
 ### Step 8 — Conditionals (Example 2.7)
 
 - **Teach**: `if`, `elif`, `else` — same shape as the loops, no parentheses around the condition, colon ends the line, indented body. The book's example grades a number into Excellent / Good / OK.
-- **Do**: Create `06-ifelse.py`. Set a variable `x = 60`, branch on `x >= 70` → Excellent, `x >= 60` → Good, otherwise OK. Run it. Then change `x` to 75 and 50 and run again to confirm all three branches work.
+- **Do**: Open `07-ifelse.py`. Set a variable `x = 60`, branch on `x >= 70` → Excellent, `x >= 60` → Good, otherwise OK. Run it. Then change `x` to 75 and 50 and run again to confirm all three branches fire.
 - **Expected**: Output changes between the three labels depending on `x`.
 - **Tell me when done**: reply with `step 8 done`.
 
 ### Step 9 — Functions and Exercises 2.1, 2.2 (Examples 2.8, 2.9)
 
-- **Teach**: Functions in Python use `def name(args):`. Example 2.8 shows a two-argument `add`. Example 2.9 introduces lists (Python's name for arrays) and walks through one to find the maximum value. Functions are where the book's exercises start, so this step also asks you to do two of them.
+- **Teach**: Functions in Python use `def name(args):`. Example 2.8 (`08-funcs.py`) shows a two-argument `add` that takes `x` and `y` and returns the sum. Example 2.9 (`09-array.py`) introduces lists (what Python calls arrays) and walks through one to find the maximum value. Functions are where the book's exercises start, so this step also asks you to do two of them.
 - **Do**:
-  1. Create `07-add.py` with a function `add(x, y)` that returns the sum, and call it.
-  2. Create `08-maxarray.py` with a function `maxarray(xs)` that loops through a list and returns the largest element. Test on `[0, 1, 2, 3, 4, 5]`.
-  3. **Exercise 2.1** — In `exercises/` (next to this README), create `ex-2-1-minarray.py`. Write a `minarray(xs)` that returns the minimum.
-  4. **Exercise 2.2** — Create `ex-2-2-sortarray.py`. Write a `sortarray(xs)` that returns the list sorted in ascending order. You may use a simple loop-based sort or the built-in `sorted()` — try both, note in `notes.md` which you preferred and why.
+  1. Open `08-funcs.py`. Define `add(x, y)` that returns `x + y`. Call it once and print the result.
+  2. Open `09-array.py`. Define `maxarray(xs)` that loops through a list and returns the largest element. Test on `[0, 1, 2, 3, 4, 5]`.
+  3. **Exercise 2.1** — Open `exercises/ex-2-1-minarray.py`. Write `minarray(xs)` that returns the minimum.
+  4. **Exercise 2.2** — Open `exercises/ex-2-2-sortarray.py`. Write `sortarray(xs)` that returns the list sorted ascending. Try a hand-rolled loop sort first, then `sorted()`. Note in `notes.md` which you preferred and why.
 - **Expected**: All four files run; outputs are sensible.
 - **Tell me when done**: reply with `step 9 done`.
 
-### Step 10 — Input from the keyboard, type conversion, Exercises 2.3 and 2.4 (Examples 2.10, 2.11, 2.12)
+### Step 10 — Input from the keyboard, type conversion, Exercises 2.3, 2.4 (Examples 2.10, 2.11, 2.12)
 
-- **Teach**: `input()` reads a line of text from the keyboard. Everything it returns is a string, so to do arithmetic you must convert it with `int()` or `float()`. To embed a number back into a printed string, convert it with `str()`. Example 2.12 also introduces `split()` and `map()` to read a whole list of numbers in one line.
+- **Teach**: `input()` reads a line of text from the keyboard. Everything it returns is a string, so for arithmetic you must convert with `int()` or `float()`; to embed a number back into a printed string, use `str()`. The book's third file in this set (`12-inputlist.py`) introduces `split()` and `map()` to read a whole list of numbers in one line.
 - **Do**:
-  1. Create `09-input.py` — ask the user's name, greet them.
-  2. Create `10-square.py` — ask for a number, compute its square (using `**`), print as a sentence.
-  3. Create `11-list-input.py` — ask for several space-separated numbers, parse them into a Python list of integers.
-  4. **Exercise 2.3** — In `exercises/`, create `ex-2-3-square-float.py`. Same as `10-square.py` but accept a float.
-  5. **Exercise 2.4** — Create `ex-2-4-record.py`. Read a name (string), an age (int), and marks (float), then print all three back.
+  1. Open `10-input.py`. Ask the user's name with `input()`, greet them by concatenating strings.
+  2. Open `11-input2.py`. Ask for a number, convert with `int()`, square it with `**`, print as a sentence.
+  3. Open `12-inputlist.py`. Ask for several space-separated numbers, parse them into a list of integers via `list(map(int, s.split()))`.
+  4. **Exercise 2.3** — Open `exercises/ex-2-3-square-float.py`. Same as `11-input2.py` but with `float()`.
+  5. **Exercise 2.4** — Open `exercises/ex-2-4-record.py`. Read a name (string), age (int), marks (float). Print all three back.
 - **Expected**: Each program prompts you, accepts your input, prints a meaningful result.
 - **Tell me when done**: reply with `step 10 done`.
 
@@ -157,27 +153,27 @@ Do not skim ahead. The point is to absorb each idea before moving on.
 
 - **Teach**: Python's standard library is huge. `math` is the first module you meet. You import it with `import math` and use dotted access — `math.pi`, `math.sqrt`, `math.factorial`, `math.floor`, `math.ceil`, `math.sin`. The point: most things you need already exist; you find them, you don't reinvent them.
 - **Do**:
-  1. Create `12-math.py`. With `r = 5`, compute the circumference of a circle (`2 * math.pi * r`). Compute `math.sqrt(5)`, `math.factorial(7)`, `math.floor(16.4)`, `math.ceil(16.4)`. Print each labeled.
-  2. **Exercise 2.5** — In `exercises/`, create `ex-2-5-sines.py`. Read a list of float numbers from the keyboard (reuse the parsing pattern from step 10), compute `math.sin` of each, print the results.
-- **Expected**: Twelve numeric outputs across the two files, all labeled.
+  1. Open `13-math.py`. With `r = 5`, compute the circumference of a circle (`2 * math.pi * r`). Compute `math.sqrt(5)`, `math.factorial(7)`, `math.floor(16.4)`, `math.ceil(16.4)`. Print each labeled.
+  2. **Exercise 2.5** — Open `exercises/ex-2-5-sines.py`. Read a list of floats from the keyboard (reuse the `split`/`map` pattern from step 10, but with `float`), compute `math.sin` of each, print the results.
+- **Expected**: Five labeled numeric outputs in `13-math.py`; one line per input number in the exercise.
 - **Tell me when done**: reply with `step 11 done`.
 
 ### Step 12 — Plotting with Matplotlib and Exercise 2.6 (Examples 2.14, 2.15)
 
-- **Teach**: Matplotlib is Python's most popular plotting library. The book introduces it in two steps: a single sine curve, then a two-line plot of sine and cosine with custom colors, markers, and a legend. NumPy comes in here too — `np.linspace`, `np.sin`, `np.cos` give you vectorized math over arrays without writing a loop.
+- **Teach**: Matplotlib is Python's most popular plotting library. The book introduces it in two steps: a single sine curve (`14-plot.py`), then a two-line plot of sine and cosine with custom colors, markers, and a legend (`15-plot2.py`). NumPy comes in here too — `np.linspace`, `np.sin`, `np.cos` give you vectorized math over arrays without writing a loop.
 - **Do**:
-  1. Create `13-plot-sine.py`. Use `numpy.linspace(0, 2*np.pi, 100)` (cleaner than the book's manual scaling), compute `y = np.sin(x)`, plot, set title/xlabel/ylabel, show.
-  2. Create `14-plot-sine-cosine.py`. Plot sine in blue with `s` markers and cosine in red with `o` markers between `-π` and `π`, add a legend.
-  3. **Exercise 2.6** — In `exercises/`, create `ex-2-6-three-curves.py`. On the same axes, plot `y = 3x + 4`, `y = 2x² + 1`, and `y = x³ + 9` over a range of your choice, with three different colors and a legend.
-- **Expected**: Three plot windows pop up (or three figures inline if you're in a notebook). Legends visible, colors distinct.
+  1. Open `14-plot.py`. Use `np.linspace(0, 2*np.pi, 100)` (cleaner than the book's manual scaling), compute `y = np.sin(x)`, plot, set title and axis labels, show.
+  2. Open `15-plot2.py`. Plot sine in blue with `s` markers and cosine in red with `o` markers between `-π` and `π`, add a legend.
+  3. **Exercise 2.6** — Open `exercises/ex-2-6-three-curves.py`. On the same axes, plot `y = 3x + 4`, `y = 2x² + 1`, and `y = x³ + 9` over a range you pick, with three different colors and a legend.
+- **Expected**: Three plot windows pop up (or three inline figures if you switch to a notebook). Legends visible, colors distinct.
 - **Tell me when done**: reply with `step 12 done`.
 
 ### Step 13 — Reading and writing CSV with pandas (Examples 2.16, 2.17)
 
 - **Teach**: CSV is the lingua franca of tabular data. pandas wraps the messy parts: `pd.DataFrame(...)` builds a table from a dict of columns, `df.to_csv(path, index=False)` writes it, `pd.read_csv(path)` reads it back. The `index=False` argument suppresses pandas' default row-index column, which is almost always what you want when handing the file to anyone else.
 - **Do**:
-  1. Create `15-write-csv.py`. Build a DataFrame with two columns `Name` and `Age` (four rows, your choice). Print it. Save it to `test.csv` next to the script with no index column.
-  2. Create `16-read-csv.py`. Read `test.csv` back into a new DataFrame. Print it. Confirm it round-trips.
+  1. Open `16-data.py`. Build a DataFrame with two columns `Name` and `Age` (four rows, your choice). Print it. Save it to `test.csv` next to the script with no index column.
+  2. Open `17-data2.py`. Read `test.csv` back into a new DataFrame. Print it. Confirm it round-trips.
 - **Expected**: A `test.csv` file appears next to your scripts. The two prints look the same.
 - **Tell me when done**: reply with `step 13 done`.
 
@@ -185,8 +181,8 @@ Do not skim ahead. The point is to absorb each idea before moving on.
 
 - **Teach**: Same DataFrame, different file format. Excel needs a third-party engine; we already installed `xlsxwriter` in step 3. The pattern is `pd.ExcelWriter(path, engine='xlsxwriter')` for writing and `pd.read_excel(path, sheet_name=...)` for reading.
 - **Do**:
-  1. Create `17-write-excel.py`. Reuse the DataFrame from step 13. Save it to `test.xlsx` with `sheet_name='Sheet1'`.
-  2. Create `18-read-excel.py`. Read `test.xlsx` back and print it.
+  1. Open `18-excel.py`. Reuse the DataFrame from step 13. Save it to `test.xlsx` with `sheet_name='Sheet1'`.
+  2. Open `19-excel2.py`. Read `test.xlsx` back and print it.
 - **Expected**: `test.xlsx` opens in Numbers/Excel and shows the four rows. The Python read prints the same data.
 - **Tell me when done**: reply with `step 14 done`.
 

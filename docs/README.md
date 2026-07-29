@@ -16,7 +16,7 @@ These rules govern every session. Claude reads this file and follows it.
    - Expected output / how to know it worked
    - A clear "tell me when done" cue
 
-4. **The user types every example by hand.** Claude shows code only inside chat replies or inside the tutorial document as fenced snippets; the user transcribes them into `src/chapters/chapter-NN-<slug>/examples/` (or `exercises/`). Claude **never creates `.py` files for the user, never runs Python, and never executes the user's code.** Verifying that something works is the user's job — that is part of the learning.
+4. **The user types every example by hand.** Claude shows code only inside chat replies or inside the tutorial document as fenced snippets; the user transcribes them into `src/chapters/chapter-NN-<slug>/examples/` (or `exercises/`). Claude **may create empty placeholder `.py` files** as scaffolding (zero bytes, no code, no comments) so the user has the right filename to open and type into; Claude **never writes code into those files, never runs Python, and never executes the user's code**. Verifying that something works is the user's job — that is part of the learning.
 
 5. **Each tutorial is a small teach-and-do.** Every step explains the concept first (a sentence or two — the "teach"), then states the action (the "do"). The user finishes a chapter with deep understanding, not just a copied folder.
 
