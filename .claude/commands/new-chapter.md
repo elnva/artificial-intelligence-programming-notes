@@ -7,7 +7,7 @@ You are scaffolding a new chapter for the Perry Xiao "AI Programming with Python
 
 Arguments: `$ARGUMENTS` — expected as `<NN> <slug>`, for example: `03 machine-learning`.
 
-The command runs in two phases. **Phase A** runs immediately when the slash command is invoked (folder + tutorial template). **Phase B** runs later in the same session, AFTER the user shares the chapter content and Claude fills in the tutorial steps — Phase B creates empty `.py` stubs for every example and exercise the tutorial mentions.
+The command runs in two phases. **Phase A** runs immediately when the slash command is invoked (folder + tutorial template). **Phase B** runs later in the same session, AFTER the user shares the chapter content and Claude fills in the tutorial steps — Phase B creates `.py` stubs for every example and exercise the tutorial mentions, each holding only a comment header that says what needs to be done.
 
 ## Phase A — folder scaffold (run on slash invocation)
 
@@ -42,13 +42,19 @@ Once Phase A is done and the user has shared the chapter content and the tutoria
 1. Read the chapter `README.md`.
 2. Extract every filename of the form `NN-<slug>.py` (examples) and `ex-<chapter>-<num>-<slug>.py` (exercises).
 3. For each filename:
-   - If the file does NOT yet exist under `examples/` or `exercises/`, create it as a zero-byte file.
+   - If the file does NOT yet exist under `examples/` or `exercises/`, create it with a task header made only of `#` comment lines:
+     ```python
+     # Example 2.14 — single sine curve (README Step 12.1)
+     # TODO:
+     # - <one bullet per action, taken from that step's **Do** in README.md>
+     # Expected: <what running it should show, from that step's **Expected**>
+     ```
    - If the file already exists, leave it alone — the user may have started typing.
 4. Remove `examples/.gitkeep` if `examples/` now has any `.py` files; same for `exercises/`.
 5. Print a short list of created stubs and skipped (already-present) files.
 
 Hard rules for both phases:
 
-- Never write code, comments, or docstrings into the stub files. Stubs are zero bytes.
+- Stub files hold ONLY the comment task header. No runnable code, no solution. Function/library names in the TODO bullets are fine; full statements that solve the task are not.
 - Never copy passages or examples from the book into any file in the repo.
 - The tutorial `README.md` is the ONLY place code snippets appear, as fenced markdown blocks the user transcribes by hand.
