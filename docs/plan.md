@@ -5,7 +5,7 @@ One row per book chapter. Hands-on chapters live in `src/chapters/chapter-NN-<sl
 | Chapter | Topic | Status | Tutorial |
 | ------- | ----- | ------ | -------- |
 | 02 | AI Development Tools | in-progress | [chapter-02-ai-development-tools/README.md](../src/chapters/chapter-02-ai-development-tools/README.md) |
-| 03 | Machine Learning | todo | _scaffold with `/new-chapter 03 machine-learning`_ |
+| 03 | Machine Learning | in-progress | [chapter-03-machine-learning/README.md](../src/chapters/chapter-03-machine-learning/README.md) |
 | 04 | Deep Learning | todo | _scaffold with `/new-chapter 04 deep-learning`_ |
 | 05 | Image Classification | todo | _scaffold with `/new-chapter 05 image-classification`_ |
 | 06 | Face Detection and Face Recognition | todo | _scaffold with `/new-chapter 06 face-detection`_ |
